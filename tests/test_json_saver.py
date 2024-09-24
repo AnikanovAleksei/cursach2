@@ -5,18 +5,12 @@ import json
 from abc import ABC, abstractmethod
 
 
-# Ваши классы и импорт здесь
-# from src.models.vacancy import Vacancy
-# from src.models.file_worker import FileWorker
-# from src.api.json_saver import JSONSaver
-
 class VacancyAPI(ABC):
     @abstractmethod
     def get_vacancies(self, keyword: str) -> list:
         pass
 
 
-# Mock Vacancy class, in case it's not implemented
 class Vacancy:
     def __init__(self, url, title, description):
         self.url = url
@@ -24,7 +18,6 @@ class Vacancy:
         self.description = description
 
 
-# Предположим, что JSONSaver в src/api/json_saver.py
 class JSONSaver:
     def __init__(self, file_path):
         self.__file_path = file_path
