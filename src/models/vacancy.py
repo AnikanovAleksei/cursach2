@@ -16,7 +16,7 @@ class Vacancy:
         self.description = description
 
     @staticmethod
-    def __validate_salary(salary: int) -> str:
+    def __validate_salary(salary: int) -> int | str:
         """
         Валидирует зарплату. Если зарплата не указана, возвращает строку "Зарплата не указана".
 
@@ -57,7 +57,6 @@ class Vacancy:
 
             title = vacancy.get('name', '')
             url = vacancy.get('alternate_url', '')
-            # Убедимся, что salary - это действительный словарь перед вызовом get на нем
             salary = None
             if vacancy.get('salary') and isinstance(vacancy.get('salary'), dict):
                 salary = vacancy.get('salary').get('from', None)

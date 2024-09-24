@@ -21,7 +21,6 @@ class Vacancy:
 class JSONSaver:
     def __init__(self, file_path):
         self.__file_path = file_path
-        # Initialize file
         with open(self.__file_path, 'w', encoding='utf-8') as file:
             json.dump([], file)
 
